@@ -86,7 +86,6 @@ console.log("reqbody----->",req.body)
 //         var inArguments = decoded.inArguments[0];
         
         logData(req);
-        console.log("argumentos---->",inArguments)
         console.log("inicia post")
         // axios.defaults.headers = {
         // 'Content-Type': 'application/json',
