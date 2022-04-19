@@ -31,7 +31,7 @@
           "outArguments": [],
           "url": "https://testjourney4.herokuapp.com/journeybuilder/execute",
            "verb": "POST",
-            "useJwt": true,
+            "useJwt": false,
             "timeout": 10000
         }
     },
