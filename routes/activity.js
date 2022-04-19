@@ -83,9 +83,9 @@ console.log("reqbody----->",req.body)
 // }
 // if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
 // decoded in arguments
-        // var inArguments = decoded.inArguments[0];
+//         var inArguments = decoded.inArguments[0];
         
-        // logData(req);
+        logData(req);
         console.log("argumentos---->",inArguments)
         console.log("inicia post")
         // axios.defaults.headers = {
@@ -113,7 +113,7 @@ console.log("reqbody----->",req.body)
 //         return res.status(400).end();
 //         }
 //         });
- };
+};
 /*
 * POST Handler for /publish/ route of Activity.
 */
