@@ -91,9 +91,9 @@ define([
         // var postcardTextValue = $('#postcard-text').val();
         console.log("entro a save")
         console.log("payloadAntes-->",payload['arguments'].execute.inArguments.length);
-        payload['arguments'].execute.inArguments = [{
-            "tokens": authTokens
-        }];
+        // payload['arguments'].execute.inArguments = [{
+        //     "tokens": authTokens
+        // }];
         
         payload['metaData'].isConfigured = true;
 
