@@ -73,17 +73,17 @@ console.log("resbody----->",res.body)
 console.log("reqbody----->",req.body)
 
 
-// console.log("response",res)
-// JWT(req.body, process.env.jwtSecret, (err, decoded) => {
-// // verification error -> unauthorized request
-// console.log("entro a token")
-// if (err) {
-// console.error(err);
-// return res.status(401).end();
-// }
-// if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
-// decoded in arguments
-//         var inArguments = decoded.inArguments[0];
+console.log("response",res)
+JWT(req.body, process.env.jwtSecret, (err, decoded) => {
+// verification error -> unauthorized request
+console.log("entro a token")
+if (err) {
+console.error(err);
+return res.status(401).end();
+}
+if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
+decoded in arguments
+        var inArguments = decoded.inArguments[0];
         
         logData(req);
         console.log("inicia post")
@@ -107,11 +107,11 @@ console.log("reqbody----->",req.body)
 
 
         res.send(200, 'Execute');
-// } else {
-//         console.error('inArguments invalid.');
-//         return res.status(400).end();
-//         }
-//         });
+} else {
+        console.error('inArguments invalid.');
+        return res.status(400).end();
+        }
+        });
 };
 /*
 * POST Handler for /publish/ route of Activity.
