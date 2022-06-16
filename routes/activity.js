@@ -5,7 +5,6 @@ const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var util = require('util');
 var http = require('https');
 const axios = require("axios")
-const url = "https://api-global.yalochat.com/notifications/api/v1/accounts/krispy-kreme-wa-mx/bots/krispy-kreme-wa-mx/notifications"
 exports.logExecuteData = [];
 function logData(req) {
 exports.logExecuteData.push({
