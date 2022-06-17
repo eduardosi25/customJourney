@@ -91,7 +91,7 @@ define([
         // var postcardTextValue = $('#postcard-text').val();
         console.log("payloadAntes-->",payload['arguments'].execute.inArguments);
         console.log("payloadAntes--> con npmbre",payload['arguments'].execute.inArguments[1].Name);
-        console.log("payloadAntes--> con celular",payload['arguments'].execute.inArguments[0].phone);
+        console.log("payloadAntes--> con celular",payload['arguments'].execute.inArguments[2].phone);
         // console.log("payloadAntes--> con Nombre",payload['arguments'].execute.inArguments[1].phone);
 
         //payload['arguments'].execute.inArguments = [{
