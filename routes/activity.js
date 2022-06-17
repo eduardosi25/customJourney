@@ -87,11 +87,10 @@ decoded in arguments
         logData(req);
         console.log("inicia post")
         axios.defaults.headers = {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUNUtNbHBiSGpKQ2RQSUtmdFZ5SUJBem5IUEllcThyMCJ9.EDZ45MU8V6tlEvAv1KAZeLtAwRSJgSg2bo5VzwNzdRE'
+        'Content-Type': 'application/json'
         }
-        axios.post('https://api-global.yalochat.com/notifications/api/v1/accounts/krispy-kreme-wa-mx/bots/krispy-kreme-wa-mx/notifications' , 
-        {"type":"kkpremiososcars2022","users":[{"phone":"+5245883023","params":{"PROMOCION":"PROMOCION"}}]})
+        axios.post('https://api-global.yalochat.com/notifications/api/v1/accounts/krispy-kreme-wa-mx/bots/krispy-kreme-wa-mx/notifications') 
+        // {"type":"kkpremiososcars2022","users":[{"phone":"+525545883023","params":{"PROMOCION":"PROMOCION"}}]})
         .then(response => {
         console.log('Response', response.data)
         })

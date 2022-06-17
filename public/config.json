@@ -9,7 +9,7 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "Journey Builder",
+            "name": "Journey Builder final",
           "description": "custom Journey Builder",
           "step1Label": "Configure Activity"
         }
@@ -31,7 +31,7 @@
           "outArguments": [],
           "url": "https://customjourney5.herokuapp.com/journeybuilder/execute",
            "verb": "POST",
-            "useJwt": false,
+            "useJwt": true,
             "timeout": 10000
         }
     },
