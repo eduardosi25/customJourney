@@ -21,7 +21,7 @@
              "Phone":"{{Contact.Attribute.test_HD.phone}}"
            },
            {
-             "Nombre":"{{Contact.Attribute.test_HD.name}}"
+             "Name":"{{Contact.Attribute.test_HD.name}}"
            }
 
          ],

@@ -91,7 +91,7 @@ define([
         // var postcardTextValue = $('#postcard-text').val();
         console.log("payloadAntes-->",payload['arguments'].execute.inArguments);
         console.log("payloadAntes--> con Phone",payload['arguments'].execute.inArguments[1].phone);
-        console.log("payloadAntes--> con Nombre",payload['arguments'].execute.inArguments[2].name);
+        console.log("payloadAntes--> con Nombre",payload['arguments'].execute.inArguments[0].name);
         //payload['arguments'].execute.inArguments = [{
         //    "tokens": authTokens
         //}];
@@ -101,7 +101,7 @@ define([
             'Phone': "{{Contact.Attribute.test_HD.phone}}"
         },
         {
-            'Nombre': "{{Contact.Attribute.test_HD.name}}"
+            'Name': "{{Contact.Attribute.test_HD.name}}"
         }];
 
 
