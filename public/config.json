@@ -1,6 +1,6 @@
 {
   "workflowApiVersion": "1.1",
-  "key" : "1bb14dae-f1bc-48f0-af48-1975ff15ce2c",
+  "key" : "e0a94791-1a92-4f90-a0d3-e6fcf3dd1a76",
   "metaData": {
       "icon": "images/icon.png",
       "iconSmall": "images/iconSmall.png",
@@ -18,10 +18,10 @@
       "execute": {
          "inArguments":[
            {
-            "Name":"{{Contact.Attribute.test_HD.Name}}"
+            "name":"{{Contact.Attribute.test_HD.name}}"
            },
            {
-            "Phone":"{{Contact.Attribute.test_HD.phone}}"
+            "phone":"{{Contact.Attribute.test_HD.phone}}"
            }
 
          ],
@@ -34,7 +34,7 @@
       }
   },
   "configurationArguments": {
-    "applicationExtensionKey": "1bb14dae-f1bc-48f0-af48-1975ff15ce2c",
+    "applicationExtensionKey": "e0a94791-1a92-4f90-a0d3-e6fcf3dd1a76",
     "save": {
       "url": "https://customjourney5.herokuapp.com/journeybuilder/save",
         "verb": "POST",
@@ -75,14 +75,14 @@
           "execute": {
               "inArguments": [  
                   {
-                    "phone": {
+                    "name": {
                       "dataType": "String",
                       "isNullable": false,
                       "direction": "out"   
                     }
                     },
                     {
-                      "Name": {
+                      "phone": {
                         "dataType": "String",
                         "isNullable": false,
                         "direction": "out"   
