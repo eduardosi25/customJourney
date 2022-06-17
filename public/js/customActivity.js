@@ -98,7 +98,7 @@ define([
         
         payload['arguments'].execute.inArguments = [
         {
-            'Phone': "{{Contact.Attribute.test_HD.Phone}}"
+            'Phone': "{{Contact.Attribute.test_HD.phone}}"
         },
         {
             'Name': "{{Contact.Attribute.test_HD.Name}}"

@@ -18,7 +18,7 @@
       "execute": {
          "inArguments":[
            {
-             "Phone":"{{Contact.Attribute.test_HD.Phone}}"
+             "Phone":"{{Contact.Attribute.test_HD.phone}}"
            },
            {
              "Name":"{{Contact.Attribute.test_HD.Name}}"
@@ -75,14 +75,14 @@
           "execute": {
               "inArguments": [  
                   {
-                    "Phone": {
+                    "phone": {
                       "dataType": "String",
                       "isNullable": false,
                       "direction": "out"   
                     }
                     },
                     {
-                      "name": {
+                      "Name": {
                         "dataType": "String",
                         "isNullable": false,
                         "direction": "out"   
