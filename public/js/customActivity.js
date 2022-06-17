@@ -116,7 +116,7 @@ define([
         payload['metaData'].isConfigured = true;
 
         console.log("payloadDespues-->",payload['arguments'].execute.inArguments);
-        console.log("payload0-->",payload['arguments'].execute.inArguments[0]);
+        console.log("payload0-->",payload['arguments'].execute.inArguments[0].Name);
         connection.trigger('updateActivity', payload);
         console.log("termino save")
     }
