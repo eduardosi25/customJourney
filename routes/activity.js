@@ -87,12 +87,12 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                 console.log("inargumentsaxios-->",inArguments[0])
                 logData(req);
                 var stringData = '{"type":"kkpremiososcars2022","users":[{"phone":"+525545883023","params":{"PROMOCION":"promocion"}}]}'
-                console.log("stringData----->",stringData)
+                console.log("stringDatasms----->",stringData)
                 axios.defaults.headers = {
                 'Content-Type': 'application/json'
                 // Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUNUtNbHBiSGpKQ2RQSUtmdFZ5SUJBem5IUEllcThyMCJ9.EDZ45MU8V6tlEvAv1KAZeLtAwRSJgSg2bo5VzwNzdRE'
                 }
-                axios.post('https://twilio55.herokuapp.com/whats/'
+                axios.post('https://twilio55.herokuapp.com/sms'
                 //stringData
                 )
                 .then(response => {
