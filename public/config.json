@@ -1,100 +1,95 @@
 {
-    "workflowApiVersion": "1.1",
-    "key" : "85d04ab7-e546-4a53-b862-ca3831aed734",
-    "metaData": {
-        "icon": "images/icon.png",
-        "iconSmall": "images/iconSmall.png",
-        "category": "message"
-    },
-    "type": "REST",
-    "lang": {
-        "en-US": {
-            "name": "Journey Builder final",
-          "description": "custom Journey Builder",
-          "step1Label": "Configure Activity"
-        }
-    },
-    "arguments": {
-        "execute": {
-           "inArguments":[
-             {
-               "Promocion":"2x1"
-             },
-             {
-               "Phone":"+525545883023"
-             },
-             {
-               "Nombre":"eduardo silve"
-             }
-
-           ],
-          "outArguments": [],
-          "url": "https://customjourney5.herokuapp.com/journeybuilder/execute",
-           "verb": "POST",
-            "useJwt": false,
-            "timeout": 10000
-        }
-    },
-    "configurationArguments": {
-      "save": {
-        "url": "https://customjourney5.herokuapp.com/journeybuilder/save",
-          "verb": "POST",
-        "useJwt": true
-       },
-       "publish": {
-        "url": "https://customjourney5.herokuapp.com/journeybuilder/publish",
-           "verb": "POST",
-        "useJwt": true
-       },
-      "stop": {
-        "url": "https://customjourney5.herokuapp.com/journeybuilder/stop",
-           "verb": "POST",
-        "useJwt": true
-      },
-      "validate": {
-        "url": "https://customjourney5.herokuapp.com/journeybuilder/validate",
-        "verb": "POST",
-        "useJwt": true
+  "workflowApiVersion": "1.1",
+  "key" : "1bb14dae-f1bc-48f0-af48-1975ff15ce2c",
+  "metaData": {
+      "icon": "images/icon.png",
+      "iconSmall": "images/iconSmall.png",
+      "category": "message"
+  },
+  "type": "REST",
+  "lang": {
+      "en-US": {
+          "name": "Journey Builder Final",
+        "description": "custom Journey Builder",
+        "step1Label": "Configure Activity"
       }
+  },
+  "arguments": {
+      "execute": {
+         "inArguments":[
+           {
+             "Phone":"{{Contact.Attribute.test_HD.Phone}}"
+           },
+           {
+             "Nombre":"{{Contact.Attribute.test_HD.Nombre}}"
+           }
+
+         ],
+        "outArguments": [],
+        "url": "https://sfmc-custom-activity-hexagon.herokuapp.com/journeybuilder/execute",
+         "verb": "POST",
+         "body": "",
+          "useJwt": true,
+          "timeout": 10000
+      }
+  },
+  "configurationArguments": {
+    "applicationExtensionKey": "1bb14dae-f1bc-48f0-af48-1975ff15ce2c",
+    "save": {
+      "url": "https://sfmc-custom-activity-hexagon.herokuapp.com/journeybuilder/save",
+        "verb": "POST",
+        "body": "",
+      "useJwt": true
+     },
+     "publish": {
+      "url": "https://sfmc-custom-activity-hexagon.herokuapp.com/journeybuilder/publish",
+         "verb": "POST",
+         "body": "",
+      "useJwt": true
+     },
+    "stop": {
+      "url": "https://sfmc-custom-activity-hexagon.herokuapp.com/journeybuilder/stop",
+         "verb": "POST",
+         "body": "",
+      "useJwt": true
     },
-    "wizardSteps": [
-        { "label": "Configure Activity", "key": "step1" }
-    ],
-    "userInterfaces": {
-        "configModal": {
-            "height": 400,
-            "width": 1000,
-          "fullscreen": false
-        }
-    },
-    "schema": {
-        "arguments": {
-            "execute": {
-                "inArguments": [  
-                    {
-                    "Promocion": {
+    "validate": {
+      "url": "https://sfmc-custom-activity-hexagon.herokuapp.com/journeybuilder/validate",
+      "verb": "POST",
+      "body": "",
+      "useJwt": true
+    }
+  },
+  "wizardSteps": [
+      { "label": "Configure Activity", "key": "step1" }
+  ],
+  "userInterfaces": {
+      "configModal": {
+          "height": 400,
+          "width": 1000,
+        "fullscreen": false
+      }
+  },
+  "schema": {
+      "arguments": {
+          "execute": {
+              "inArguments": [  
+                  {
+                    "Phone": {
                       "dataType": "String",
                       "isNullable": false,
                       "direction": "out"   
                     }
-
                     },
                     {
-                      "Phone": {
+                      "name": {
                         "dataType": "String",
                         "isNullable": false,
                         "direction": "out"   
                       }
-                      },
-                      {
-                        "Nombre": {
-                          "dataType": "String",
-                          "isNullable": false,
-                          "direction": "out"   
-                        }
-                        }],
-                "outArguments": []
-            }
-        }
-    }
+                      }],
+              "outArguments": []
+          }
+      }
+  }
 }

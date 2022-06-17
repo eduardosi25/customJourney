@@ -13,21 +13,21 @@ define([
     connection.on('initActivity', initialize);
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
-    // connection.on('requestedInteraction', onRequestedInteraction);
-    // connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
-    // connection.on('requestedDataSources', onRequestedDataSources);
+    connection.on('requestedInteraction', onRequestedInteraction);
+    connection.on('requestedTriggerEventDefinition', onRequestedTriggerEventDefinition);
+    connection.on('requestedDataSources', onRequestedDataSources);
 
     connection.on('clickedNext', save);
    
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
-
+        connection.trigger('requestSchema');
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
-        // connection.trigger('requestInteraction');
-        // connection.trigger('requestTriggerEventDefinition');
-        // connection.trigger('requestDataSources');  
+        connection.trigger('requestInteraction');
+        connection.trigger('requestTriggerEventDefinition');
+        connection.trigger('requestDataSources');  
 
     }
 
@@ -89,15 +89,28 @@ define([
     function save() {
         // var postcardURLValue = $('#postcard-url').val();
         // var postcardTextValue = $('#postcard-text').val();
-        console.log("entro a save")
-        console.log("payloadAntes-->",payload['arguments'].execute.inArguments.length);
-        // payload['arguments'].execute.inArguments = [{
-        //     "tokens": authTokens
-        // }];
+        console.log("payloadAntes-->",payload['arguments'].execute.inArguments);
+        console.log("payloadAntes--> con Promocion",payload['arguments'].execute.inArguments[0].Promocion);
+        console.log("payloadAntes--> con Phone",payload['arguments'].execute.inArguments[1].Phone);
+        console.log("payloadAntes--> con Nombre",payload['arguments'].execute.inArguments[2].Nombre);
+        //payload['arguments'].execute.inArguments = [{
+        //    "tokens": authTokens
+        //}];
         
+        payload['arguments'].execute.inArguments = [
+        {
+            'Phone': "{{Contact.Attribute.test_HD.Phone}}"
+        },
+        {
+            'Nombre': "{{Contact.Attribute.test_HD.Nombre}}"
+        }];
+
+
+         
         payload['metaData'].isConfigured = true;
 
-        console.log("payloadDespues-->",payload['arguments'].execute.inArguments.length);
+        console.log("payloadDespues-->",payload['arguments'].execute.inArguments);
+        console.log("payload0-->",payload['arguments'].execute.inArguments[0]);
         connection.trigger('updateActivity', payload);
         console.log("termino save")
     }
