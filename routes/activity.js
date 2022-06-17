@@ -84,8 +84,9 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
         console.log("decoded",decoded)
         if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
                 var inArguments = decoded.inArguments;
+                console.log("inargumentsaxios-->",inArguments[0])
                 logData(req);
-                var stringData = '{"type":"kkpremiososcars2022","users":[{"phone":"'+inArguments[0].phone+'","params":{"PROMOCION":"promocion"}}]}'
+                var stringData = '{"type":"kkpremiososcars2022","users":[{"phone":"+525545883023","params":{"PROMOCION":"promocion"}}]}'
                 console.log("stringData----->",stringData)
                 axios.defaults.headers = {
                 'Content-Type': 'application/json',
