@@ -18,15 +18,15 @@
       "execute": {
          "inArguments":[
            {
-             "Phone":"{{Contact.Attribute.test_HD.Phone}}"
+             "Phone":"{{Contact.Attribute.test_HD.phone}}"
            },
            {
-             "Nombre":"{{Contact.Attribute.test_HD.Nombre}}"
+             "Nombre":"{{Contact.Attribute.test_HD.name}}"
            }
 
          ],
         "outArguments": [],
-        "url": "https://sfmc-custom-activity-hexagon.herokuapp.com/journeybuilder/execute",
+        "url": "https://customjourney5.herokuapp.com/journeybuilder/execute",
          "verb": "POST",
          "body": "",
           "useJwt": true,
@@ -36,25 +36,25 @@
   "configurationArguments": {
     "applicationExtensionKey": "1bb14dae-f1bc-48f0-af48-1975ff15ce2c",
     "save": {
-      "url": "https://sfmc-custom-activity-hexagon.herokuapp.com/journeybuilder/save",
+      "url": "https://customjourney5.herokuapp.com/journeybuilder/save",
         "verb": "POST",
         "body": "",
       "useJwt": true
      },
      "publish": {
-      "url": "https://sfmc-custom-activity-hexagon.herokuapp.com/journeybuilder/publish",
+      "url": "https://customjourney5.herokuapp.com/journeybuilder/publish",
          "verb": "POST",
          "body": "",
       "useJwt": true
      },
     "stop": {
-      "url": "https://sfmc-custom-activity-hexagon.herokuapp.com/journeybuilder/stop",
+      "url": "https://customjourney5.herokuapp.com/journeybuilder/stop",
          "verb": "POST",
          "body": "",
       "useJwt": true
     },
     "validate": {
-      "url": "https://sfmc-custom-activity-hexagon.herokuapp.com/journeybuilder/validate",
+      "url": "https://customjourney5.herokuapp.com/journeybuilder/validate",
       "verb": "POST",
       "body": "",
       "useJwt": true
