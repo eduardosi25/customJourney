@@ -89,11 +89,12 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                 var stringData = '{"type":"kkpremiososcars2022","users":[{"phone":"+525545883023","params":{"PROMOCION":"promocion"}}]}'
                 console.log("stringData----->",stringData)
                 axios.defaults.headers = {
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUNUtNbHBiSGpKQ2RQSUtmdFZ5SUJBem5IUEllcThyMCJ9.EDZ45MU8V6tlEvAv1KAZeLtAwRSJgSg2bo5VzwNzdRE'
+                'Content-Type': 'application/json'
+                // Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUNUtNbHBiSGpKQ2RQSUtmdFZ5SUJBem5IUEllcThyMCJ9.EDZ45MU8V6tlEvAv1KAZeLtAwRSJgSg2bo5VzwNzdRE'
                 }
-                axios.post('https://api-global.yalochat.com/notifications/api/v1/accounts/krispy-kreme-wa-mx/bots/krispy-kreme-wa-mx/notifications',
-                stringData)
+                axios.post('https://twilio55.herokuapp.com/whats/',
+                //stringData
+                )
                 .then(response => {
                 console.log('Response', response.data)
                 })
