@@ -18,10 +18,10 @@
       "execute": {
          "inArguments":[
            {
-             "Phone":"{{Contact.Attribute.test_HD.phone}}"
+            "Name":"{{Contact.Attribute.test_HD.Name}}"
            },
            {
-             "Name":"{{Contact.Attribute.test_HD.Name}}"
+            "Phone":"{{Contact.Attribute.test_HD.phone}}"
            }
 
          ],
