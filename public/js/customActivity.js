@@ -93,8 +93,8 @@ define([
         console.log("payloadAntes1--> con npmbre",payload['arguments'].execute.inArguments[0]);
         console.log("payloadAntes2--> con npmbre",payload['arguments'].execute.inArguments[1]);
         // console.log("payloadAntes3--> con npmbre",payload['arguments'].execute.inArguments[3].phone);
-        console.log("payloadAntes4--> con celular",payload['arguments'].execute.inArguments[0].Phone);
-        console.log("payloadAntes4--> con nombre",payload['arguments'].execute.inArguments[1].Name);
+        console.log("payloadAntes4--> con celular",payload['arguments'].execute.inArguments[0].name);
+        console.log("payloadAntes4--> con nombre",payload['arguments'].execute.inArguments[1].phone);
 
         // console.log("payloadAntes--> con Nombre",payload['arguments'].execute.inArguments[1].phone);
 
