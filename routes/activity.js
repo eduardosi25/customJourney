@@ -93,7 +93,7 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                 'Content-Type': 'application/json'
                 // Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUNUtNbHBiSGpKQ2RQSUtmdFZ5SUJBem5IUEllcThyMCJ9.EDZ45MU8V6tlEvAv1KAZeLtAwRSJgSg2bo5VzwNzdRE'
                 }
-                axios.post('https://twilio55.herokuapp.com/sms',
+                axios.post('https://twilio55.herokuapp.com/sms'
                 // stringData)
                 )
                 .then(response => {
