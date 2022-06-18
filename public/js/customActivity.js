@@ -117,9 +117,7 @@ define([
 
         console.log("payloadDespues-->",payload['arguments'].execute.inArguments);
         console.log("payload0-->",payload['arguments'].execute.inArguments[0].name);
-        console.log("payload0-->",payload['arguments'].execute.inArguments[1].phone);
-        console.log("payload0-->",payload['arguments'].execute.inArguments[0].phone);
-        console.log("payload0-->",payload['arguments'].execute.inArguments[1].name);
+        console.log("payload1-->",payload['arguments'].execute.inArguments[1].phone);
         connection.trigger('updateActivity', payload);
         console.log("termino save")
     }
