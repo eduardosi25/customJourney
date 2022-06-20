@@ -16,12 +16,11 @@
   },
   "arguments": {
       "execute": {
-         "inArguments":[
+         "inArguments":
            {
             "phone":"{{Contact.Attribute.twilio2.phone}}"
            }
-
-         ],
+         ,
         "outArguments": [],
         "url": "https://customjourney5.herokuapp.com/journeybuilder/execute",
          "verb": "POST",
