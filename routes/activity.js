@@ -8,6 +8,7 @@ var http = require('https');
 // const messaingResponse = require('twilio').twiml.MessagingResponse;
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
+const twilio = require('twilio')
 // const my_phone = process.env.TO_NUMBER
 const from_phone = process.env.FROM_NUMBER
 exports.logExecuteData = [];
@@ -93,14 +94,15 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                 var inArguments = decoded.keyValue;
                 console.log("inargumentsaxiosss-->",inArguments)
                 // logData(req)
-                var stringData = {"phone": inArguments}
+                // var stringData = {"phone": inArguments}
                 // console.log("stringData----->",stringData)
 
 
                 //comienza twilio
 
         try {
-                const client = require('twilio')(accountSid, authToken); 
+
+                const client = new twilio(accountSid, authToken); 
                 client.messages 
                     .create({         
                         to: inArguments,
