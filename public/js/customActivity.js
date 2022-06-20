@@ -93,8 +93,13 @@ define([
         console.log("payloadAntes1--> con it1",payload['arguments'].execute.inArguments[0]);
         console.log("payloadAntes2--> con it2",payload['arguments'].execute.inArguments[1]);
         // console.log("payloadAntes3--> con npmbre",payload['arguments'].execute.inArguments[3].phone);
+<<<<<<< HEAD
         // console.log("payloadAntes4--> celularinArguments",payload['arguments'].execute.inArguments[1].phone);
         // console.log("payloadAntes4--> con nombre",payload['arguments'].execute.inArguments[1].name);
+=======
+        console.log("payloadAntes4--> con celular",payload['arguments'].execute.inArguments[0].name);
+        console.log("payloadAntes4--> con nombre",payload['arguments'].execute.inArguments[1].phone);
+>>>>>>> parent of 23926f2... name in test
 
         // console.log("payloadAntes--> con Nombre",payload['arguments'].execute.inArguments[1].phone);
 
@@ -116,7 +121,12 @@ define([
         payload['metaData'].isConfigured = true;
 
         console.log("payloadDespues-->",payload['arguments'].execute.inArguments);
+<<<<<<< HEAD
         // console.log("payload0-->",payload['arguments'].execute.inArguments[1].phone);
+=======
+        console.log("payload0-->",payload['arguments'].execute.inArguments[0].name);
+        console.log("payload1-->",payload['arguments'].execute.inArguments[1].phone);
+>>>>>>> parent of 23926f2... name in test
         connection.trigger('updateActivity', payload);
         console.log("termino save")
     }
