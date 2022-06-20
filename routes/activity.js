@@ -99,7 +99,7 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                 const client = require('twilio')(accountSid, authToken); 
                 client.messages 
                     .create({         
-                        to: req.body.phone,
+                        to: inArguments,
                         from:from_phone,
                         body: 'Hello edu!'
                     }) 
