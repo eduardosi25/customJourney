@@ -91,10 +91,9 @@ define([
         // var postcardTextValue = $('#postcard-text').val();
         console.log("payloadAntes-->",payload['arguments'].execute.inArguments);
         console.log("payloadAntes1--> con it1",payload['arguments'].execute.inArguments[0]);
-        console.log("payloadAntes2--> con it2",payload['arguments'].execute.inArguments[1]);
         // console.log("payloadAntes3--> con npmbre",payload['arguments'].execute.inArguments[3].phone);
-        console.log("payloadAntes4--> con celular",payload['arguments'].execute.inArguments[0].name);
-        console.log("payloadAntes4--> con nombre",payload['arguments'].execute.inArguments[1].phone);
+
+        console.log("payloadAntes4--> con nombre",payload['arguments'].execute.inArguments[0].phone);
 
         // console.log("payloadAntes--> con Nombre",payload['arguments'].execute.inArguments[1].phone);
 
@@ -104,11 +103,7 @@ define([
         
         payload['arguments'].execute.inArguments = [
         {
-            'name': "{{Contact.Attribute.twilio.name}}"
-            
-        },
-        {
-            'phone': "{{Contact.Attribute.twilio.phone}}"
+            'phone': "{{Contact.Attribute.twilio2.phone}}"
         }];
 
 
@@ -116,8 +111,7 @@ define([
         payload['metaData'].isConfigured = true;
 
         console.log("payloadDespues-->",payload['arguments'].execute.inArguments);
-        console.log("payload0-->",payload['arguments'].execute.inArguments[0].name);
-        console.log("payload1-->",payload['arguments'].execute.inArguments[1].phone);
+        console.log("payload1-->",payload['arguments'].execute.inArguments[0].phone);
         connection.trigger('updateActivity', payload);
         console.log("termino save")
     }

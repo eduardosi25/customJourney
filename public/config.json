@@ -18,10 +18,7 @@
       "execute": {
          "inArguments":[
            {
-            "name":"{{Contact.Attribute.twilio.name}}"
-           },
-           {
-            "phone":"{{Contact.Attribute.twilio.phone}}"
+            "phone":"{{Contact.Attribute.twilio2.phone}}"
            }
 
          ],
