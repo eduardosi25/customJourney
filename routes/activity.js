@@ -104,7 +104,7 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                 client.messages 
                     .create({         
                         to: inArguments,
-                        messagingServiceSid: 'MG9771218c5623a637a50b48352f6b655c',
+                        from:from_phone,
                         body: 'Hello edu!'
                     }) 
                     .then(message => console.log(message.sid)) 
