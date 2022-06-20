@@ -110,7 +110,7 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                 var data = qs.stringify({
                   'From': from_phone,
                   'Body': 'Hi there',
-                  'To': '+525545883023' 
+                  'To': inArguments 
                 });
                 var config = {
                   method: 'post',
