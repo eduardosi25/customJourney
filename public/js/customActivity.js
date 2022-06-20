@@ -111,7 +111,7 @@ define([
         payload['metaData'].isConfigured = true;
 
         console.log("payloadDespues-->",payload['arguments'].execute.inArguments);
-        console.log("payload1-->",payload['arguments'].execute.inArguments[0].phone);
+  
         connection.trigger('updateActivity', payload);
         console.log("termino save")
     }
