@@ -101,10 +101,10 @@ define([
         //    "tokens": authTokens
         //}];
         
-        payload['arguments'].execute.inArguments = [
+        payload['arguments'].execute.inArguments = 
         {
             'phone': "{{Contact.Attribute.twilio2.phone}}"
-        }];
+        };
 
 
          
