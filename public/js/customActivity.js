@@ -90,10 +90,10 @@ define([
         // var postcardURLValue = $('#postcard-url').val();
         // var postcardTextValue = $('#postcard-text').val();
         console.log("payloadAntes-->",payload['arguments'].execute.inArguments);
-        // console.log("payloadAntes1--> con it1",payload['arguments'].execute.inArguments[0]);
+        console.log("payloadAntes1--> con it1",payload['arguments'].execute.inArguments[0]);
         // console.log("payloadAntes3--> con npmbre",payload['arguments'].execute.inArguments[3].phone);
 
-        // console.log("payloadAntes4--> con nombre",payload['arguments'].execute.inArguments[0].phone);
+        console.log("payloadAntes4--> con nombre",payload['arguments'].execute.inArguments[0].phone);
 
         // console.log("payloadAntes--> con Nombre",payload['arguments'].execute.inArguments[1].phone);
 
@@ -104,14 +104,14 @@ define([
         payload['arguments'].execute.inArguments = [
         {
             'phone': "{{Contact.Attribute.twilio2.phone}}"
-        }
-    ];
+        }];
+
 
          
         payload['metaData'].isConfigured = true;
 
         console.log("payloadDespues-->",payload['arguments'].execute.inArguments);
-
+        console.log("payload1-->",payload['arguments'].execute.inArguments[0].phone);
         connection.trigger('updateActivity', payload);
         console.log("termino save")
     }
