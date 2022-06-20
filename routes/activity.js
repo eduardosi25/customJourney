@@ -4,8 +4,12 @@ const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var util = require('util');
 var http = require('https');
-const axios = require("axios")
-const url = "https://api-global.yalochat.com/notifications/api/v1/accounts/krispy-kreme-wa-mx/bots/krispy-kreme-wa-mx/notifications"
+// const axios = require("axios")
+// const messaingResponse = require('twilio').twiml.MessagingResponse;
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+// const my_phone = process.env.TO_NUMBER
+const from_phone = process.env.FROM_NUMBER
 exports.logExecuteData = [];
 function logData(req) {
 exports.logExecuteData.push({
@@ -67,6 +71,9 @@ res.send(200, 'Save');
 * POST Handler for /execute/ route of Activity.
 */
 
+
+
+
 exports.execute = function (req, res) {
 console.log("reqbody -->", req.body);
 // example on how to decode JWT
@@ -88,22 +95,18 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                 // logData(req)
                 var stringData = {"phone": inArguments}
                 // console.log("stringData----->",stringData)
-                axios.defaults.headers = {
-                'Content-Type': 'application/json'
-                // Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUNUtNbHBiSGpKQ2RQSUtmdFZ5SUJBem5IUEllcThyMCJ9.EDZ45MU8V6tlEvAv1KAZeLtAwRSJgSg2bo5VzwNzdRE'
-                }
-                axios.post('https://twilio55.herokuapp.com/sms',
-                stringData)
-                
-                .then(response => {
-                console.log('Response', response.data)
-                })
-                .catch(e => {
-                console.log('Error: ', e.response.data)
-                })
 
+                const client = require('twilio')(accountSid, authToken); 
+                client.messages 
+                    .create({         
+                        to: req.body.phone,
+                        from:from_phone,
+                        body: 'Hello edu!'
+                    }) 
+                    .then(message => console.log(message.sid)) 
+                    .done();
+                res.end("SE ENVIO MENSAJE A "+req.body.phone);
 
-                res.send(200, 'Execute');
         } else {
                 console.error('inArguments invalid.');
                 return res.status(400).end();

@@ -28,7 +28,8 @@
     "jsonwebtoken": "^8.0.1",
     "path": "^0.12.7",
     "request": "^2.81.0",
-    "require": "^2.4.20"
+    "require": "^2.4.20",
+    "twilio": "^3.77.3"
   },
   "devDependencies": {
     "gulp": "^4.0.2"
