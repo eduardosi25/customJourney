@@ -82,8 +82,8 @@
                     }
                     },
                     {
-                      "phone": {
-                        "dataType": "String",
+                      "numberphone": {
+                        "dataType": "Number",
                         "isNullable": false,
                         "direction": "out"   
                       }
