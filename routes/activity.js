@@ -104,64 +104,40 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
                 //comienza twilio
 
-//         try {
-
-// //SMS!!!!
-//                 var data = qs.stringify({
-//                   'From': 'whatsapp:'+from_phone,
-//                   'Body': 'Hi there',
-//                   'To': 'whatsapp:'+inArguments 
-//                 });
-//                 var config = {
-//                   method: 'post',
-//                   url: 'https://api.twilio.com/2010-04-01/Accounts/AC2e1ce2824752558bcc06b2b1bc926404/Messages.json',
-//                   headers: { 
-//                         'Authorization': 'Basic QUMyZTFjZTI4MjQ3NTI1NThiY2MwNmIyYjFiYzkyNjQwNDo3NmRlM2FmYjNjZTRkOTM5M2EyYWMzNWYzNTIzNmZjNA==', 
-//                         'Content-Type': 'application/x-www-form-urlencoded'
-//                       },
-//                   data : data
-//                 };
-                
-//                 axios(config)
-//                 .then(function (response) {
-//                   console.log(JSON.stringify(response.data));
-//                 })
-//                 .catch(function (error) {
-//                   console.log(error);
-//                 });
-//         }catch(error) {
-//                 console.error(error);
-//         }
-                //WHATSSSS
                 try {
-                        const client = require('twilio')(accountSid, authToken); 
-        
-                        client.messages 
-                        .create({ 
-                                body: 'Your appointment is coming up on July 21 at 3PM', 
-                                from: 'whatsapp:+14155238886',       
-                                to: 'whatsapp:+5215545883023'
-                        }) 
-                        .then(message => console.log(message.sid)) 
-                        .done();
-                        
-                        res.end("SE ENVIO MENSAJE");
 
+        //SMS!!!!
+                        var data = qs.stringify({
+                        'From': 'whatsapp:+14155238886',
+                        'Body': 'Hi there',
+                        'To': 'whatsapp:+5215545883023' 
+                        });
+                        var config = {
+                        method: 'post',
+                        url: 'https://api.twilio.com/2010-04-01/Accounts/AC2e1ce2824752558bcc06b2b1bc926404/Messages.json',
+                        headers: { 
+                                'Authorization': 'Basic QUMyZTFjZTI4MjQ3NTI1NThiY2MwNmIyYjFiYzkyNjQwNDo3NmRlM2FmYjNjZTRkOTM5M2EyYWMzNWYzNTIzNmZjNA==', 
+                                'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        data : data
+                        };
+                        
+                        axios(config)
+                        .then(function (response) {
+                        console.log(JSON.stringify(response.data));
+                        })
+                        .catch(function (error) {
+                        console.log(error);
+                        });
                 }catch(error) {
                         console.error(error);
                 }
-
-
-
-
-
-
 
         } else {
                 console.error('inArguments invalid.');
                 return res.status(400).end();
                 }
-        
+
         });
 
       
