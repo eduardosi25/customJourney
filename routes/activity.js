@@ -96,6 +96,10 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                 var stringData = {"phone": inArguments}
                 // console.log("stringData----->",stringData)
 
+
+                //comienza twilio
+
+        try {
                 const client = require('twilio')(accountSid, authToken); 
                 client.messages 
                     .create({         
@@ -106,11 +110,19 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                     .then(message => console.log(message.sid)) 
                     .done();
                 res.end("SE ENVIO MENSAJE A "+inArguments);
+        }catch(error) {
+                console.error(error);
+                // expected output: ReferenceError: nonExistentFunction is not defined
+                // Note - error messages will vary depending on browser
+        }
         } else {
                 console.error('inArguments invalid.');
                 return res.status(400).end();
                 }
+        
         });
+
+      
 };
 /*
 * POST Handler for /publish/ route of Activity.
