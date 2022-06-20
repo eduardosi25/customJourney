@@ -83,10 +83,10 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
         }
         console.log("decoded",decoded.keyValue)
         if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
-                var inArguments = decoded.inArguments;
-                console.log("inargumentsaxios-->",inArguments[0].keyValue)
+                var inArguments = decoded.keyValue;
+                console.log("inargumentsaxios-->",inArguments)
                 // logData(req);
-                var stringData = {"phone": inArguments[0].keyValue}
+                var stringData = {"phone": inArguments}
                 // console.log("stringData----->",stringData)
                 axios.defaults.headers = {
                 'Content-Type': 'application/json'
