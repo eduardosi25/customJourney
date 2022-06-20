@@ -90,12 +90,10 @@ define([
         // var postcardURLValue = $('#postcard-url').val();
         // var postcardTextValue = $('#postcard-text').val();
         console.log("payloadAntes-->",payload['arguments'].execute.inArguments);
-        console.log("payloadAntes1--> con npmbre",payload['arguments'].execute.inArguments[0]);
-        console.log("payloadAntes2--> con npmbre",payload['arguments'].execute.inArguments[1]);
-        console.log("payloadAntes2--> con npmbre",payload['arguments'].execute.inArguments[2]);
-        console.log("payloadAntes2--> con npmbre",payload['arguments'].execute.inArguments[3]);
+        console.log("payloadAntes1--> con it1",payload['arguments'].execute.inArguments[0]);
+        console.log("payloadAntes2--> con it2",payload['arguments'].execute.inArguments[1]);
         // console.log("payloadAntes3--> con npmbre",payload['arguments'].execute.inArguments[3].phone);
-        console.log("payloadAntes4--> con celular",payload['arguments'].execute.inArguments[2].numberphone);
+        console.log("payloadAntes4--> celularinArguments",payload['arguments'].execute.inArguments[1].phone);
         // console.log("payloadAntes4--> con nombre",payload['arguments'].execute.inArguments[1].name);
 
         // console.log("payloadAntes--> con Nombre",payload['arguments'].execute.inArguments[1].phone);
