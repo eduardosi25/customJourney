@@ -11,6 +11,10 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilio = require('twilio')
 // const my_phone = process.env.TO_NUMBER
 const from_phone = process.env.FROM_NUMBER
+var axios = require('axios');
+var qs = require('qs');
+
+
 exports.logExecuteData = [];
 function logData(req) {
 exports.logExecuteData.push({
@@ -102,17 +106,29 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
         try {
 
-                const client = new twilio(accountSid, authToken); 
-                client.messages 
-                    .create({         
-                        to: inArguments,
-                        from:from_phone,
-                        body: 'Hello edu!'
-                    }) 
-                    .then(message => console.log(message.sid)) 
-                    .done();
-                res.end("SE ENVIO MENSAJE A "+inArguments);
+
+                var data = qs.stringify({
+                  'From': from_phone,
+                  'Body': 'Hi there',
+                  'To': '+525545883023' 
+                });
+                var config = {
+                  method: 'post',
+                  url: 'https://api.twilio.com/2010-04-01/Accounts/AC2e1ce2824752558bcc06b2b1bc926404/Messages.json',
+                  headers: { 
+                        'Authorization': 'Basic QUMyZTFjZTI4MjQ3NTI1NThiY2MwNmIyYjFiYzkyNjQwNDo3NmRlM2FmYjNjZTRkOTM5M2EyYWMzNWYzNTIzNmZjNA==', 
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                      },
+                  data : data
+                };
                 
+                axios(config)
+                .then(function (response) {
+                  console.log(JSON.stringify(response.data));
+                })
+                .catch(function (error) {
+                  console.log(error);
+                });
         }catch(error) {
                 console.error(error);
         }
