@@ -21,7 +21,7 @@
             "name":"{{Contact.Attribute.twilio.name}}"
            },
            {
-            "phone":"{{Contact.Attribute.twilio.numberphone}}"
+            "phone":"{{Contact.Attribute.twilio.phone}}"
            }
 
          ],
@@ -82,8 +82,8 @@
                     }
                     },
                     {
-                      "numberphone": {
-                        "dataType": "Number",
+                      "phone": {
+                        "dataType": "String",
                         "isNullable": false,
                         "direction": "out"   
                       }

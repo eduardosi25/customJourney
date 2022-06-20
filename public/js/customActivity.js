@@ -108,7 +108,7 @@ define([
             
         },
         {
-            'phone': "{{Contact.Attribute.twilio.numberphone}}"
+            'phone': "{{Contact.Attribute.twilio.phone}}"
         }];
 
 
