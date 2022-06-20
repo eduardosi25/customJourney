@@ -104,16 +104,15 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                 client.messages 
                     .create({         
                         to: inArguments,
-                        from:from_phone,
+                        messagingServiceSid: 'MG9771218c5623a637a50b48352f6b655c',
                         body: 'Hello edu!'
                     }) 
                     .then(message => console.log(message.sid)) 
                     .done();
                 res.end("SE ENVIO MENSAJE A "+inArguments);
+                
         }catch(error) {
                 console.error(error);
-                // expected output: ReferenceError: nonExistentFunction is not defined
-                // Note - error messages will vary depending on browser
         }
         } else {
                 console.error('inArguments invalid.');
