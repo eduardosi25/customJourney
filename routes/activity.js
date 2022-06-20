@@ -106,11 +106,11 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
         try {
 
-
+//SMS!!!!
                 var data = qs.stringify({
-                  'From': from_phone,
+                  'From': 'whatsapp:'+from_phone,
                   'Body': 'Hi there',
-                  'To': inArguments 
+                  'To': 'whatsapp:'+inArguments 
                 });
                 var config = {
                   method: 'post',
@@ -129,6 +129,8 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                 .catch(function (error) {
                   console.log(error);
                 });
+
+                //WHATSSSS
         }catch(error) {
                 console.error(error);
         }
