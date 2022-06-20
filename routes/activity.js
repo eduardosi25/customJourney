@@ -105,8 +105,7 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                     }) 
                     .then(message => console.log(message.sid)) 
                     .done();
-                res.end("SE ENVIO MENSAJE A "+req.body.phone);
-
+                res.end("SE ENVIO MENSAJE A "+inArguments);
         } else {
                 console.error('inArguments invalid.');
                 return res.status(400).end();
