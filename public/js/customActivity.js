@@ -104,11 +104,11 @@ define([
         
         payload['arguments'].execute.inArguments = [
         {
-            'name': "{{Contact.Attribute.laboratorio-IS.EmailAddress}}"
+            'name': "{{Contact.Attribute.twilio.name}}"
             
         },
         {
-            'phone': "{{Contact.Attribute.laboratorio-IS.SegmentName}}"
+            'phone': "{{Contact.Attribute.twilio.numberphone}}"
         }];
 
 
