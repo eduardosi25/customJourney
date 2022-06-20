@@ -105,7 +105,7 @@ define([
         {
             'phone': "{{Contact.Attribute.twilio2.phone}}"
         }
-    ]
+    ];
 
          
         payload['metaData'].isConfigured = true;

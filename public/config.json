@@ -70,14 +70,21 @@
   "schema": {
       "arguments": {
           "execute": {
-              "inArguments": 
+              "inArguments": [  
+                  {
+                    "name": {
+                      "dataType": "String",
+                      "isNullable": false,
+                      "direction": "out"   
+                    }
+                    },
                     {
                       "phone": {
                         "dataType": "String",
                         "isNullable": false,
                         "direction": "out"   
                       }
-                      },
+                      }],
               "outArguments": []
           }
       }
