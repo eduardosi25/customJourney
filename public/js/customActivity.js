@@ -95,7 +95,7 @@ define([
         // console.log("payloadAntes3--> con npmbre",payload['arguments'].execute.inArguments[3].phone);
 
         console.log("payloadAntes4--> con phone",payload['arguments'].execute.inArguments[0].phone);
-        console.log("payloadAntes5--> con whats",payload['arguments'].execute.inArguments[0].phonewhats);
+        console.log("payloadAntes5--> con whats",payload['arguments'].execute.inArguments[1].phonewhats);
         console.log("payloadvalor-> con valor",postcardTextValue);
 
         //payload['arguments'].execute.inArguments = [{
@@ -109,6 +109,10 @@ define([
         {
         
             'phonewhats': "{{Contact.Attribute.twilio2.phonewhats}}"
+        },
+        {
+        
+            'valueText': postcardTextValue
         }
     ];
 
