@@ -88,14 +88,15 @@ define([
 
     function save() {
         // var postcardURLValue = $('#postcard-url').val();
-        // var postcardTextValue = $('#postcard-text').val();
+        var postcardTextValue = $( "#models option:selected" ).text();
         console.log("payloadAntes-->",payload['arguments'].execute.inArguments);
         console.log("payloadAntes1--> con it1",payload['arguments'].execute.inArguments[0]);
+        console.log("payloadAntes2--> con it2",payload['arguments'].execute.inArguments[1]);
         // console.log("payloadAntes3--> con npmbre",payload['arguments'].execute.inArguments[3].phone);
 
-        console.log("payloadAntes4--> con nombre",payload['arguments'].execute.inArguments[0].phone);
-
-        // console.log("payloadAntes--> con Nombre",payload['arguments'].execute.inArguments[1].phone);
+        console.log("payloadAntes4--> con phone",payload['arguments'].execute.inArguments[0].phone);
+        console.log("payloadAntes5--> con whats",payload['arguments'].execute.inArguments[0].phonewhats);
+        console.log("payloadvalor-> con valor",postcardTextValue);
 
         //payload['arguments'].execute.inArguments = [{
         //    "tokens": authTokens
@@ -118,6 +119,7 @@ define([
         console.log("payloadDespues-->",payload['arguments'].execute.inArguments);
         console.log("payload1-->",payload['arguments'].execute.inArguments[0].phone);
         connection.trigger('updateActivity', payload);
+        console.log("payload2-->",payload['arguments'].execute.inArguments[1].phonewhats);
         console.log("termino save")
     }
 
