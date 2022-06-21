@@ -88,12 +88,12 @@ console.log('KEY - > ' + process.env.jwtSecret);
 
 
 JWT(req.body, process.env.jwtSecret, (err, decoded) => {
-
+        console.log("req--->",req.body)
         if (err) {
         console.error(err);
         return res.status(401).end();
         }
-        console.log("decoded",decoded.keyValue)
+        console.log("decoded-->",decoded)
         if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
                 var inArguments = decoded.keyValue;
                 console.log("inargumentsaxiosss-->",inArguments)
