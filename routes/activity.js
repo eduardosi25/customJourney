@@ -108,9 +108,9 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
         //SMS!!!!
                         var data = qs.stringify({
-                        'From': 'whatsapp:+14155238886',
-                        'Body': 'Hi there whattsssss',
-                        'To': 'whatsapp:+525545883023' 
+                        'From': from_phone,
+                        'Body': 'Hi there',
+                        'To': '+525545883023'
                         });
                         var config = {
                         method: 'post',
