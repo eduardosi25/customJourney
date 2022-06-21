@@ -108,9 +108,9 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
         //SMS!!!!
                         var data = qs.stringify({
-                        'From': 'whatsapp:+14155238886',
+                        'From': from_phone,
                         'Body': 'Hi there',
-                        'To': 'whatsapp:+5215545883023' 
+                        'To': inArguments 
                         });
                         var config = {
                         method: 'post',
@@ -131,14 +131,14 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                         });
                 }catch(error) {
                         console.error(error);
-                }
+        }
 
-        } else {
-                console.error('inArguments invalid.');
-                return res.status(400).end();
-                }
+} else {
+        console.error('inArguments invalid.');
+        return res.status(400).end();
+        }
 
-        });
+});
 
       
 };
