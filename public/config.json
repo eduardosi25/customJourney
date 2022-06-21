@@ -19,6 +19,9 @@
          "inArguments":[
            {
             "phone":"{{Contact.Attribute.twilio2.phone}}"
+           },
+           {
+            "phonewhats":"{{Contact.Attribute.twilio2.phonewhats}}"
            }
 
          ],
@@ -79,12 +82,19 @@
                     }
                     },
                     {
-                      "phone": {
-                        "dataType": "String",
-                        "isNullable": false,
-                        "direction": "out"   
-                      }
-                      }],
+                    "phone": {
+                      "dataType": "String",
+                      "isNullable": false,
+                      "direction": "out"   
+                    }
+                    },
+                    {
+                    "phonewhats": {
+                      "dataType": "String",
+                      "isNullable": false,
+                      "direction": "out"   
+                    }
+                    }],
               "outArguments": []
           }
       }

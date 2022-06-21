@@ -104,7 +104,12 @@ define([
         payload['arguments'].execute.inArguments = [
         {
             'phone': "{{Contact.Attribute.twilio2.phone}}"
-        }];
+        },
+        {
+        
+            'phonewhats': "{{Contact.Attribute.twilio2.phonewhats}}"
+        }
+    ];
 
 
          
