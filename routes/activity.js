@@ -103,9 +103,9 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
 
                 //comienza twilio  
-                console.log("valueText2",decoded.inArguments[3].valueText);           
+                console.log("valueText2",decoded.inArguments[2].valueText);           
                 try {
-                        if(decoded.inArguments.valueText=="sms") {       
+                        if(decoded.inArguments[2].valueText=="sms") {       
         //SMS!!!!
                                 console.log(decoded.inArguments.valueText.substr(3));
                                 var data = qs.stringify({
@@ -130,7 +130,7 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                                 .catch(function (error) {
                                 console.log(error);
                                 });
-                        }else if(decoded.inArguments.valueText=="whats"){
+                        }else if(decoded.inArguments[2].valueText=="whats"){
                                 //whats!!!!
                                 console.log(decoded.inArguments.valueText.substr(3));
                                 var data = qs.stringify({
