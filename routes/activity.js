@@ -103,7 +103,7 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
 
                 //comienza twilio  
-                console.log("valueText2",decoded.inArguments);           
+                console.log("valueText2",decoded.inArguments[0]);           
                 try {
                         if(decoded.inArguments.valueText=="sms") {       
         //SMS!!!!
@@ -136,7 +136,7 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                                 var data = qs.stringify({
                                         'From': from_phone,
                                         'Body': 'Hi there',
-                                        'To': '+521'+'+525545883023'
+                                        'To': '+521'+'5545883023'
                                         });
                                         var config = {
                                         method: 'post',
