@@ -25,15 +25,20 @@
 </head>
 
 <body>
-    <label for="models">choose a model</label>
+    <div>
+        <label for="models">choose a model</label>
+        <select name="models" id="models">
+        <option value="sms">sms</option>
+        <option value="whats">whats</option>
+        </select>
+    </div>
+    <div>
+        <label for="name">mensaje de texto:</label>
+    </div>
+    <div>
+        <input type="text" id="message" name="message" minlength="4" maxlength="30" size="30">
+    </div>
 
-    <select name="models" id="models">
-      <option value="sms">sms</option>
-      <option value="whats">whats</option>
-    </select>
-    <label for="name">mensaje de texto:</label>
-
-<input type="text" id="message" name="message" minlength="4" maxlength="8" size="20">
 </body>
 
 </html>

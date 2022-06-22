@@ -97,7 +97,7 @@ define([
 
         console.log("payloadAntes4--> con phone",payload['arguments'].execute.inArguments[0].phone);
         console.log("payloadAntes5--> con whats",payload['arguments'].execute.inArguments[1].phonewhats);
-        console.log("payloadvalor-> con valor",postcardTextValue);
+        console.log("payloadvalor-> con valor",model);
         console.log("payloamessage-> con valor",message);
         //payload['arguments'].execute.inArguments = [{
         //    "tokens": authTokens
