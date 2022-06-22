@@ -102,8 +102,7 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                 // console.log("stringData----->",stringData)
 
 
-                //comienza twilio
-                console.log("valueText1",decoded.inArguments[3].valueText);    
+                //comienza twilio  
                 console.log("valueText2",decoded.inArguments.valueText);           
                 try {
                         if(decoded.inArguments.valueText=="sms") {       
