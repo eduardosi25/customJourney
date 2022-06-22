@@ -103,15 +103,19 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
 
                 //comienza twilio  
-                console.log("valueText2",decoded.inArguments[2].valueText);           
+                console.log("model",decoded.inArguments[2].model);  
+                console.log("message",decoded.inArguments[3].message);         
                 try {
-                        if(decoded.inArguments[2].valueText=="sms") {       
+                        var to_phone= inArguments.substr(3);
+                        var modelo = decoded.inArguments[2].model
+                        var message = decoded.inArguments[3].message
+                        if(modelo=="sms") {       
         //SMS!!!!
                                 console.log("phone",inArguments.substr(3));
                                 var data = qs.stringify({
                                 'From': from_phone,
-                                'Body': 'Hi there',
-                                'To': '+52'+'5545883023'
+                                'Body': message,
+                                'To': '+52'+to_phone
                                 });
                                 var config = {
                                 method: 'post',
@@ -130,13 +134,13 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                                 .catch(function (error) {
                                 console.log(error);
                                 });
-                        }else if(decoded.inArguments[2].valueText=="whats"){
+                        }else if(modelo=="whats"){
                                 //whats!!!!
-                                console.log("phonewhts",inArguments.substr(3));
+                                
                                 var data = qs.stringify({
                                         'From': from_phone,
-                                        'Body': 'Hi there',
-                                        'To': '+521'+'5545883023'
+                                        'Body': message,
+                                        'To': '+521'+to_phone
                                         });
                                         var config = {
                                         method: 'post',

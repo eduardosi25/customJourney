@@ -88,7 +88,8 @@ define([
 
     function save() {
         // var postcardURLValue = $('#postcard-url').val();
-        var postcardTextValue = $( "#models option:selected" ).text();
+        var model = $( "#models option:selected" ).text();
+        var message = $("#message").val()
         console.log("payloadAntes-->",payload['arguments'].execute.inArguments);
         console.log("payloadAntes1--> con it1",payload['arguments'].execute.inArguments[0]);
         console.log("payloadAntes2--> con it2",payload['arguments'].execute.inArguments[1]);
@@ -97,7 +98,7 @@ define([
         console.log("payloadAntes4--> con phone",payload['arguments'].execute.inArguments[0].phone);
         console.log("payloadAntes5--> con whats",payload['arguments'].execute.inArguments[1].phonewhats);
         console.log("payloadvalor-> con valor",postcardTextValue);
-
+        console.log("payloamessage-> con valor",message);
         //payload['arguments'].execute.inArguments = [{
         //    "tokens": authTokens
         //}];
@@ -112,7 +113,11 @@ define([
         },
         {
         
-            'valueText': postcardTextValue
+            'model': model
+        },
+        {
+        
+            'message': message
         }
     ];
 
