@@ -107,7 +107,7 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                 try {
                         if(decoded.inArguments[2].valueText=="sms") {       
         //SMS!!!!
-                                console.log(decoded.inArguments.valueText.substr(3));
+                                console.log("phone",inArguments.substr(3));
                                 var data = qs.stringify({
                                 'From': from_phone,
                                 'Body': 'Hi there',
@@ -132,7 +132,7 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                                 });
                         }else if(decoded.inArguments[2].valueText=="whats"){
                                 //whats!!!!
-                                console.log(decoded.inArguments.valueText.substr(3));
+                                console.log("phonewhts",inArguments.substr(3));
                                 var data = qs.stringify({
                                         'From': from_phone,
                                         'Body': 'Hi there',
