@@ -140,7 +140,7 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
                                 var data = qs.stringify({
                                         'From': 'whatsapp:+14155238886',
                                         'Body': message,
-                                        'To': 'whatsapp:+5215545883023'
+                                        'To': 'whatsapp:+521'+to_phone
                                         });
                                         var config = {
                                         method: 'post',
