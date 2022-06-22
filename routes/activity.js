@@ -103,35 +103,62 @@ JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
 
                 //comienza twilio
-
+                                 
                 try {
-
+                        if(decoded.inArguments.phonewhats=="sms") {       
         //SMS!!!!
-                        var data = qs.stringify({
-                        'From': from_phone,
-                        'Body': 'Hi there',
-                        'To': '+525545883023'
-                        });
-                        var config = {
-                        method: 'post',
-                        url: 'https://api.twilio.com/2010-04-01/Accounts/AC2e1ce2824752558bcc06b2b1bc926404/Messages.json',
-                        headers: { 
-                                'Authorization': 'Basic QUMyZTFjZTI4MjQ3NTI1NThiY2MwNmIyYjFiYzkyNjQwNDo3NmRlM2FmYjNjZTRkOTM5M2EyYWMzNWYzNTIzNmZjNA==', 
-                                'Content-Type': 'application/x-www-form-urlencoded'
-                        },
-                        data : data
-                        };
-                        
-                        axios(config)
-                        .then(function (response) {
-                        console.log(JSON.stringify(response.data));
-                        })
-                        .catch(function (error) {
-                        console.log(error);
-                        });
-                }catch(error) {
-                        console.error(error);
-        }
+                                console.log(decoded.inArguments.phonewhats.substr(3));
+                                var data = qs.stringify({
+                                'From': from_phone,
+                                'Body': 'Hi there',
+                                'To': '+525545883023'
+                                });
+                                var config = {
+                                method: 'post',
+                                url: 'https://api.twilio.com/2010-04-01/Accounts/AC2e1ce2824752558bcc06b2b1bc926404/Messages.json',
+                                headers: { 
+                                        'Authorization': 'Basic QUMyZTFjZTI4MjQ3NTI1NThiY2MwNmIyYjFiYzkyNjQwNDo3NmRlM2FmYjNjZTRkOTM5M2EyYWMzNWYzNTIzNmZjNA==', 
+                                        'Content-Type': 'application/x-www-form-urlencoded'
+                                },
+                                data : data
+                                };
+                                
+                                axios(config)
+                                .then(function (response) {
+                                console.log(JSON.stringify(response.data));
+                                })
+                                .catch(function (error) {
+                                console.log(error);
+                                });
+                        }else if(decoded.inArguments.phonewhats=="whats"){
+                                //whats!!!!
+                                console.log(decoded.inArguments.phonewhats.substr(3));
+                                var data = qs.stringify({
+                                        'From': from_phone,
+                                        'Body': 'Hi there',
+                                        'To': '+525545883023'
+                                        });
+                                        var config = {
+                                        method: 'post',
+                                        url: 'https://api.twilio.com/2010-04-01/Accounts/AC2e1ce2824752558bcc06b2b1bc926404/Messages.json',
+                                        headers: { 
+                                                'Authorization': 'Basic QUMyZTFjZTI4MjQ3NTI1NThiY2MwNmIyYjFiYzkyNjQwNDo3NmRlM2FmYjNjZTRkOTM5M2EyYWMzNWYzNTIzNmZjNA==', 
+                                                'Content-Type': 'application/x-www-form-urlencoded'
+                                        },
+                                        data : data
+                                        };
+                                        
+                                        axios(config)
+                                        .then(function (response) {
+                                        console.log(JSON.stringify(response.data));
+                                        })
+                                        .catch(function (error) {
+                                        console.log(error);
+                                        });
+                        }
+                        }catch(error) {
+                                console.error(error);
+                }
 
 } else {
         console.error('inArguments invalid.');
