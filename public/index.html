@@ -46,6 +46,9 @@
             border: 1px solid #FFEE00;
             border-radius: 4px;
             opacity: 1;
+            font: italic normal normal 12px/15px Lato;
+            letter-spacing: 0.11px;
+            color: #8D9398;
         }
         .dropdown{
             background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -53,7 +56,10 @@
             border-radius: 4px;
             opacity: 1;
             width: 215px;
-height: 17px;
+height: 17px;            
+font: italic normal normal 12px/15px Lato;
+            letter-spacing: 0.11px;
+            color: #8D9398;
         }
         .account{
             background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -62,6 +68,9 @@ height: 17px;
             opacity: 1;
             width: 215px;
             height: 17px;
+            font: italic normal normal 12px/15px Lato;
+            letter-spacing: 0.11px;
+            color: #8D9398;
         }
         /* .subtitles{
             text-align: left;
@@ -70,6 +79,13 @@ height: 17px;
             color: #000000;
             opacity: 1;
         } */
+        .letters{
+            text-align: left;
+            font: italic normal normal 12px/15px Lato;
+            letter-spacing: 0.11px;
+            color: #8D9398;
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -85,8 +101,9 @@ height: 17px;
             </div>
             <div>
                 <select class="account"name="account" id="account">
-                    <option value="account1">+525545883023</option>
-                    <option value="account2">+525545882589</option>
+                    <option class="letters" value="" selected disabled hidden>Choose here</option>
+                    <option class="letters" value="account1">+525545883023</option>
+                    <option class="letters" value="account2">+525545882589</option>
                 </select>
             </div>
         </div>
@@ -96,8 +113,8 @@ height: 17px;
             </div>
             <div>
                 <select class="dropdown" name="models" id="models">
-                    <option value="sms">sms</option>
-                    <option value="whats">whats</option>
+                    <option class="letters" value="sms">sms</option>
+                    <option class="letters" value="whats">whats</option>
                 </select>
             </div>
         </div>
