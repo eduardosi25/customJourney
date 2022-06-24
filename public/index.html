@@ -31,8 +31,15 @@
 
         .container {
             text-align: center;
-        }
 
+        }
+.subcontainer{
+    margin-left: auto;
+            margin-right: auto;
+            display: block;
+            width: 267px;
+            
+}
         .titlePrin {
             top: 339px;
             text-align: center;
@@ -40,6 +47,7 @@
             letter-spacing: 0px;
             color: #000000;
             opacity: 1;
+            margin-top: 15px;
         }
         .textArea{
             background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -49,13 +57,14 @@
             font: italic normal normal 12px/15px Lato;
             letter-spacing: 0.11px;
             color: #8D9398;
+            width: 267px;
         }
         .dropdown{
             background: #FFFFFF 0% 0% no-repeat padding-box;
             border: 1px solid #FFEE00;
             border-radius: 4px;
             opacity: 1;
-            width: 215px;
+            width: 267px;
 height: 17px;            
 font: italic normal normal 12px/15px Lato;
             letter-spacing: 0.11px;
@@ -66,7 +75,7 @@ font: italic normal normal 12px/15px Lato;
             border: 1px solid #FFEE00;
             border-radius: 4px;
             opacity: 1;
-            width: 215px;
+            width: 267px;
             height: 17px;
             font: italic normal normal 12px/15px Lato;
             letter-spacing: 0.11px;
@@ -86,46 +95,58 @@ font: italic normal normal 12px/15px Lato;
             color: #8D9398;
             opacity: 1;
         }
+        .subtitles{
+            text-align: left;
+            font: normal normal medium 12px/15px Lato !important;
+        }
+        span.texts{
+            font:  normal normal 12px/15px Lato;
+            letter-spacing: 0.4px;
+            color: #000000;
+            opacity: 1;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="center">
-            <img src="https://assets.hexagondata.com/logos/surface1.svg" alt="">
-        </div style="margin-top: 15px;">
-        <div class="titlePrin">Selecciona tu cuenta de twilio.</div>
-        <div style="margin-top: 15px;">
-            <div class="subtitles" >
-                <label for="account">select account: </label>
-            </div>
-            <div>
-                <select class="account"name="account" id="account">
-                    <option class="letters" value="" selected disabled hidden>Choose here</option>
-                    <option class="letters" value="account1">+525545883023</option>
-                    <option class="letters" value="account2">+525545882589</option>
-                </select>
+        <div class="subcontainer">
+                <div>
+                    <img src="https://assets.hexagondata.com/logos/surface1.svg" alt="">
+                </div style="margin-top: 15px;">
+                <div class="titlePrin">Selecciona tu cuenta de twilio.</div>
+                <div style="margin-top: 15px;">
+                    <div class="subtitles" >
+                        <span class="texts">select account: </span>
+                    </div>
+                    <div>
+                        <select class="account"name="account" id="account">
+                            <option class="letters" value="" selected disabled hidden>Selecciona una cuenta..</option>
+                            <option class="letters" value="account1">+525545883023</option>
+                            <option class="letters" value="account2">+525545882589</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="margin-top: 15px;">
+                    <div class="subtitles" >
+                        <span class="texts">choose a model: </span>
+                    </div>
+                    <div>
+                        <select class="dropdown" name="models" id="models">
+                            <option class="letters" value="sms">sms</option>
+                            <option class="letters" value="whats">whats</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="subtitles"  style="margin-top: 15px;">
+                    <span class="texts">message to send: </span>
+                </div>
+                <div>
+                    <!-- <input type="text" id="message" name="message" minlength="4" maxlength="40" size="40"> -->
+                    <textarea class="textArea" name="message" id="message" cols="40" rows="5">Escribe el mensaje a enviar</textarea>
+                </div>
             </div>
         </div>
-        <div style="margin-top: 15px;">
-            <div class="subtitles" >
-                <label for="models">choose a model: </label>
-            </div>
-            <div>
-                <select class="dropdown" name="models" id="models">
-                    <option class="letters" value="sms">sms</option>
-                    <option class="letters" value="whats">whats</option>
-                </select>
-            </div>
-        </div>
-        <div class="subtitles"  style="margin-top: 15px;">
-            <label for="name">message to send: </label>
-        </div>
-        <div>
-            <!-- <input type="text" id="message" name="message" minlength="4" maxlength="40" size="40"> -->
-            <textarea class="textArea" name="message" id="message" cols="40" rows="5"></textarea>
-        </div>
-    </div>
 </body>
 
 </html>
